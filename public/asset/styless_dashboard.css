@@ -1,0 +1,331 @@
+@font-face {
+  font-family: 'poppins';
+  src: url("/font/Poppins-Regular.ttf");
+}
+
+
+/* Awal Navbar */
+
+.navbar-horizontal{
+  width: 100%; 
+  z-index: 1002; 
+  position: fixed; 
+}
+
+
+.nav__cont{
+  position: fixed;
+  width: 90px;
+  height: 100%;
+  z-index: 1000;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  cursor: pointer;
+  box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.4);
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.nav__items img{
+  height: 36px;
+  width: 36px;
+  margin-top: 4rem;
+}
+
+.nav-barr:first-child {
+  padding-top: 35px;
+  margin-left: -10px;
+  list-style-type: none;
+  margin-top: 30px;
+}
+
+.nav__cont:hover{
+  width: 220px;
+}
+
+.nav__items a:hover{
+  position: relative;
+  display: block;
+  top: -35px;
+  padding-left: 25px;
+  padding-right: 15px;
+  transition: all 0.3s ease;
+  margin-left: 45px;
+  margin-right: 10px;
+  text-decoration: none;
+  font-family: "roboto";
+  font-weight: 100;
+  font-size: 1.35em;
+  color: 1F4AA8;
+  border-radius: 10px;
+}
+
+
+.nav__items a{
+  position: relative;
+  display: block;
+  top: -35px;
+  padding-left: 35px;
+  padding-right: 15px;
+  transition: all 0.3s ease;
+  margin-left: 25px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: 1F4AA8;
+  font-family: "roboto";
+  font-weight: 100;
+  font-size: 1.35em;
+}
+
+/* akhir navbar */
+
+
+/* Awal konten 1 */
+
+.contents{
+  height: max-content;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  background-color: #E7E7E7;
+}
+
+.isi-content{
+  margin-left: 150px;
+  margin-top: 80px;
+  position: relative;
+}
+
+.judul-content-1 h3{
+  font-size: 40px;
+  font-family: poppins;
+  color: #1F4AA8;
+  margin-left: 8px;
+}
+
+.content-1{
+  background-color: #1F4AA8;
+  border-radius: 10px;
+  height: 320px;
+  background-image: url("/image/undraw_education_f8ru (1) 1.png");
+  background-repeat: no-repeat;
+  background-position: 90% 50%;
+  margin-bottom: 50px;
+  margin-top: 25px;
+  padding-top: 25px;
+  padding-left: 40px;
+  color: white;
+}
+
+.content-1 h1{
+  font-weight: bold;
+  font: optional;
+  font-size: 36px;
+}
+
+.content-1 h2{
+  font: optional;
+  font-size: 18px;
+}
+
+.contents span{
+  color: black;
+  font-family: poppins;
+  font-size: 20px;
+}
+
+/* Akhir Konten 1 */
+
+/* Awal Konten 2 */
+
+.isi-content-2{
+  background-color: #1F4AA8;
+  width: 100%;
+  border-radius: 10px;
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.isi-content-2 ul{
+  list-style: none;
+  font-family: poppins;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.isi-content-2 li{
+  display: inline;
+  font-weight: bold;
+}
+
+.ket-cont-2{
+  color: rgb(255, 255, 255);
+  margin-right: 60px;
+  margin-left: 20px;
+
+}
+
+.pers-cont{
+  background-color: white;
+  color: #1F4AA8;
+  padding: 24px 24px;
+  border-radius: 100%;
+}
+
+/* Akhir Konten 2 */
+
+
+/* Awal Konten 3 */
+
+.content-3{
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.item button {
+  color: white;
+    text-decoration: none;
+    width: 200px;
+    max-width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    max-height: 100%;
+    padding: 10% 10%;
+    display: inline-block;
+    background-color: #1F4AA8;
+    border: none;
+}
+
+.item button:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #2e63d6;
+  display: inline-block;
+  padding: 10%;
+}
+
+.item {
+  width: 200px;
+  max-width: 100%;
+  background-color: #1F4AA8;
+  color: white;
+  border-radius: 10%;
+}
+
+.item:hover {
+  background-color: #2e63d6;
+  color: white;
+  border-radius: 10%;
+}
+
+/* Akhir Konten 3 */
+
+
+/* Awal Konten 4 */
+
+.content-4{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.cont_table4{
+  margin-top: 40px;
+}
+
+
+/* Akhir Konten 4 */
+
+/* Akhir Konten */
+
+.akhir-konten {
+  width: 100%;
+  position: relative;
+}
+
+.footer {
+  margin-top: 40px;
+  margin-bottom: 5px;
+  border-top: 1px solid #303030;
+  padding: 15px 0;
+  margin-top: 45px;
+  font-family: poppins;
+  color: #1F4AA8;
+}
+
+.footer a{
+  color: #1F4AA8;
+}
+
+.footer a:hover{
+  text-decoration: none;
+  color: #1F4AA8;
+}
+
+/*////////        Responve         /////////*/
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  /* CSS */
+  
+}

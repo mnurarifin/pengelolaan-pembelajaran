@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url("/font/Roboto-Bold.ttf");
+}
+body{
+    background-image: url("/image/Rectangle 27.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.input{
+    position: absolute;  
+    padding: 15% 60% 0% 10%; 
+}
+h3{
+  color: white;  
+  padding-bottom: 10%;
+  font-family: 'Roboto';
+}
+.input h5{
+    color: white; 
+    font-family: 'Roboto'; 
+    margin-top: 10px;
+}
+span{
+    color: #B09E9E;
+    font-size: 15px;
+    font-family: 'Roboto';
+}
+.tombol{
+    text-align: center;
+    padding-top: 20px;
+    width: 200%;
+    font-family: 'Roboto';
+}
+.input-group_email{
+    width: 200%;
+}
+.input-group_pass{
+    width: 200%;
+}

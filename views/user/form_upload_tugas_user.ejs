@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+        
+<script>
+if (document.location.search.match(/type=embed/gi)) {
+  window.parent.postMessage("resize", "*");
+}
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+        
+        
+<!-- penting -->
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<title>Upload Tugas</title>
+
+<link rel="stylesheet" href="/asset/styless_upload_tugas.css">
+<link rel="stylesheet" href="/asset/owl.carousel.min.css" type="text/css">
+<link rel="stylesheet" href="/asset/owl.theme.default.css" type="text/css">
+
+<!-- link data table -->   
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
+
+<!--  -->
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/Group 22.png" />
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+
+</head>
+
+<%- include('container_user'); -%>
+
+      <div class="contents">
+        <div class="isi-content">
+          <div class="container">
+
+            <div class="judul-content-1" id="judul-content-1">
+                <!-- <h3>Dashboard</h3> -->
+                <div class="content-1">
+                  <h1>Upload Materi</h1>
+                  <h2>Jika Sudah</h2>
+                  <h2>Mengerjakan :)</h2>
+                </div>
+            </div>
+    
+            <div class="content-3" id="content-3">
+              <%
+                if(materi.length != 0){
+                materi.forEach(function(data){
+              %>
+              <form action="/ketuntasan_tugas" method="POST" enctype="multipart/form-data">
+                <input type="text" name="id_pelajaran" value="<%= data.id_pelajaran%>" hidden>
+                <h1><%= data.nama_materi %></h1>
+                <div class="isi-konten3">
+                  <textarea name="" rows="6" cols="" placeholder="Silahkan Masukan Judul Materi" readonly><%= data.deskripsi_materi %></textarea>
+                  <center>
+                  <div class="file-load-container">
+                    
+                    <input class="fileload" type="file" id="fileload2" name="samplefile2" onchange="show_file_quiz()">
+                    <label class="fileload" for="fileload2">Pilih file</label>
+                  </div>
+                  <div class="nama-file">
+                    <input class="nama_file" style="cursor: context-menu;" id="file_quiz" readonly value="<%= data.quiz%>">
+                  </div>
+                  <button name="btn_upload_tugas" type="submit" value="<%= data.id_materi%>">Upload File</button>
+                  </center>
+                  <i><label style="color: white; font-size: small; font-weight: lighter; float: right; margin-top: -5px; margin-right: -30px;">selamat mengerjakan :)</label></i>
+                </div>
+              </form>
+              <% }); %>
+              <% }; %>
+              <%- include('footer'); -%>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+  function openNav() {
+    document.getElementById("judul-content-1").style.marginLeft = "100px";
+    document.getElementById("content-3").style.marginLeft = "100px";
+    document.getElementById("content-3").style.width = "91%";
+    document.getElementById("judul-content-1").style.width = "91%";
+    document.getElementById("akhir-konten").style.marginLeft = "100px";
+    document.getElementById("akhir-konten").style.width = "91%";
+  }
+
+  function closeNav() {
+    document.getElementById("judul-content-1").style.marginLeft = "0";
+    document.getElementById("content-3").style.marginLeft = "0";
+    document.getElementById("content-3").style.width = "100%";
+    document.getElementById("judul-content-1").style.width = "100%";
+    document.getElementById("akhir-konten").style.marginLeft = "0";
+    document.getElementById("akhir-konten").style.width = "100%";
+  }
+
+  function show_file_quiz() {
+    var file_j_q = document.getElementById("fileload2").value;
+    document.getElementById("file_quiz").value = file_j_q;
+  }
+</script>
+
+
+<script>
+    function adjustHeight(el){
+    el.style.height = (el.scrollHeight > el.clientHeight) ? (el.scrollHeight)+"px" : "46px";
+}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+
+
+
+
+  
+  
+
+</body>
+
+</html>

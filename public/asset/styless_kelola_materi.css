@@ -1,0 +1,485 @@
+@font-face {
+    font-family: 'poppins';
+    src: url("/font/Poppins-Regular.ttf");
+  }
+  
+  
+  /* Awal Navbar */
+  
+  .navbar-horizontal{
+    width: 100%; 
+    z-index: 1002; 
+    position: fixed; 
+  }
+  
+  
+  .nav__cont{
+    position: fixed;
+    width: 90px;
+    height: 100%;
+    z-index: 1000;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    cursor: pointer;
+    box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.4);
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+  }
+  
+  .nav__items img{
+    height: 36px;
+    width: 36px;
+    margin-top: 4rem;
+  }
+  
+  .nav-barr:first-child {
+    padding-top: 35px;
+    margin-left: -10px;
+    list-style-type: none;
+    margin-top: 30px;
+  }
+  
+  .nav__cont:hover{
+    width: 220px;
+  }
+  
+  .nav__items a:hover{
+    position: relative;
+    display: block;
+    top: -35px;
+    padding-left: 25px;
+    padding-right: 15px;
+    transition: all 0.3s ease;
+    margin-left: 45px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-family: "roboto";
+    font-weight: 100;
+    font-size: 1.35em;
+    color: 1F4AA8;
+    border-radius: 10px;
+  }
+  
+  
+  .nav__items a{
+    position: relative;
+    display: block;
+    top: -35px;
+    padding-left: 35px;
+    padding-right: 15px;
+    transition: all 0.3s ease;
+    margin-left: 25px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: 1F4AA8;
+    font-family: "roboto";
+    font-weight: 100;
+    font-size: 1.35em;
+  }
+  
+  /* akhir navbar */
+  
+  
+  /* Awal konten 1 */
+  
+  .contents{
+    height: max-content;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    background-color: #E7E7E7;
+  }
+  
+  .isi-content{
+    margin-left: 150px;
+    margin-top: 80px;
+    position: relative;
+  }
+  
+  .judul-content-1 h3{
+    font-size: 40px;
+    font-family: poppins;
+    color: #1F4AA8;
+    margin-left: 8px;
+  }
+  
+  .content-1{
+    background-color: #1F4AA8;
+    border-radius: 10px;
+    height: 420px;
+    background-image: url("/image/undraw_Wishlist_re_m7tv 1.png");
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    margin-bottom: 50px;
+    margin-top: 25px;
+    padding-top: 50px;
+    padding-left: 40px;
+    color: white;
+  }
+  
+  .content-1 h1{
+    font-weight: bold;
+    font: optional;
+    font-size: 40px;
+  }
+  
+  .content-1 h2{
+    font: optional;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .contents span{
+    color: black;
+    font-family: poppins;
+    font-size: 20px;
+  }
+  
+  /* Akhir Konten 1 */
+  
+  
+  /* Awal Konten 3 */
+  
+  .content-3{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: poppins;
+  }
+
+  .content-3 h1{
+      text-align: center;   
+  }
+  
+  .isi-content-3 ul{
+    list-style: none;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: -40px;
+  }
+  
+  .isi-content-3 li{
+    display: inline;
+    cursor: pointer;
+    background-color: #1F4AA8;
+    margin-right: 50px;
+  }
+  
+  .Beginner{
+    background-color: #1F4AA8;
+    border-radius: 10px;
+    padding: 40px 30px;
+  }
+  
+  .clas2{
+    border-radius: 10px;
+    padding: 40px 20px;
+  }
+  
+  .isi-content-3 a{
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  
+  .isi-content-3 a:hover{
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .isi-konten3{
+    background-color: #1F4AA8 ;
+    border-radius: 10px;
+    padding: 20px 40px;
+    margin-top: 20px;
+    width: 100%;
+    max-height: max-content;
+    margin-bottom: 50px;
+}
+
+ .isi-konten3 p{
+    border: ridge 2px;
+    padding: 5px;
+    width: 20em;
+    min-height: 5em;
+    overflow: auto;
+ }
+
+  .materi input {
+    padding: 1em;
+    line-height: 1.4;
+    border: 1px solid #FBFCFC;
+    border-radius: 10px;
+    outline: none;
+    width: 50%;
+    margin-top: 10px;
+  }
+
+  .materi input:focus {
+    border-width: 3px;
+    border-color: #5DADE2;
+  }
+
+ .isi-konten3 textarea {
+  padding: 1em;
+  line-height: 1.4;
+  border: 1px solid #FBFCFC;
+  border-radius: 10px;
+  outline: none;
+  resize: none;
+  width: 100%;
+  margin-top: 10px;
+  }
+
+  .isi-konten3 textarea:focus {
+    border-width: 3px;
+    border-color: #5DADE2;
+  }
+
+.materi-container input{
+  outline: 0;
+  padding: 1em;
+  line-height: 1.4;
+  border: 1px solid #FBFCFC;
+  border-radius: 10px;
+  width: 30%;
+  margin-top: 10px;
+  height: 50px;
+  transition: border-color 0.2s;
+}
+
+.materi-container input:focus {
+  border-width: 3px;
+  border-color: #5DADE2;
+}
+
+.nama-file input {
+  outline: 0;
+  background-color: transparent;
+  width: 500px;
+  max-width: 100%;
+  color: white;
+  border: none;
+  border-bottom: 2px solid white;
+  font-size: 15px;
+  box-shadow: none;
+  border-radius: 0px;
+  caret-color: #1F4AA8;
+  margin-top: 12px;
+}
+
+.nama-file input:hover {
+  box-shadow: none;
+  border-bottom: 2px solid #02f5e1;
+}
+
+.upload-file-container input {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+.upload-file-container input + label {
+  background: #08d;
+  text-align: center;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: normal;
+  outline: none;
+  padding: 10px ;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+}
+
+.nama-file-quiz input {
+  outline: 0;
+  background-color: transparent;
+  width: 500px;
+  max-width: 100%;
+  color: white;
+  border: none;
+  border-bottom: 2px solid white;
+  font-size: 15px;
+  box-shadow: none;
+  border-radius: 0px;
+  caret-color: #1F4AA8;
+  margin-top: 12px;
+}
+
+.nama-file-quiz input:hover {
+  box-shadow: none;
+  border-bottom: 2px solid #02f5e1;
+}
+
+.upload-quiz-container input{
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+.upload-quiz-container input + label {
+  background: #08d;
+  text-align: center;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: normal;
+  outline: none;
+  padding: 10px ;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+}
+
+.fileload:hover {
+  background-color: rgb(0, 157, 255);
+}
+
+.isi-konten3 button{
+  background-color: #08d;
+  width: 150px;
+  border-radius: 10px;
+  border: 0;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 45px;
+  outline: 0;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.isi-konten3 button:hover {
+  background-color:rgb(0, 157, 255);
+  text-decoration: none;
+}
+
+.isi-konten3 button:active {
+  background-color: #06b;
+}
+
+.button-file-container input{
+  width: 250px;
+}
+
+.btn-selesai-container {
+  width: 100%;
+  height: 60px;
+}
+
+.akhir-konten3 input{
+    width: 200px;
+    margin-left: 81%;
+}
+
+.akhir-konten3_1 input{
+  float: left;
+  width: 200px;
+  margin-top: -48px;
+}
+
+
+
+  /* Akhir Konten 3 */
+
+  .footer {
+    margin-top: 40px;
+    margin-bottom: 5px;
+    border-top: 1px solid #303030;
+    padding: 15px 0;
+    margin-top: 45px;
+    font-family: poppins;
+    color: #1F4AA8;
+  }
+
+  .footer a{
+    color: #1F4AA8;
+  }
+
+  .footer a:hover{
+    text-decoration: none;
+    color: #1F4AA8;
+  }
+  
+  
+  
+  /*////////        Responve         /////////*/
+  
+  
+  /* 
+    ##Device = Desktops
+    ##Screen = 1281px to higher resolution desktops
+  */
+  
+  @media (min-width: 1281px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    /* CSS */
+    
+  }

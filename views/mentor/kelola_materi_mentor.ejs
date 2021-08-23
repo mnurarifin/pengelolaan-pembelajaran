@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+        
+<script>
+if (document.location.search.match(/type=embed/gi)) {
+  window.parent.postMessage("resize", "*");
+}
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+        
+        
+<!-- penting -->
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<title>Edit Materi</title>
+
+<link rel="stylesheet" href="/asset/styless_kelola_materi.css">
+<link rel="stylesheet" href="/asset/owl.carousel.min.css" type="text/css">
+<link rel="stylesheet" href="/asset/owl.theme.default.css" type="text/css">
+
+<!-- link data table -->   
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
+
+<!--  -->
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/Group 22.png" />
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+
+</head>
+<%- include('container_mentor'); -%>
+
+      <div class="contents">
+        <div class="isi-content">
+          <div class="container">
+
+          <div class="judul-content-1" id="judul-content-1">
+            <!-- <h3>Dashboard</h3> -->
+            <div class="content-1">
+              <h1>Edit Materi </h1>
+              <h2>Siswa</h2>
+              <h1></h1>
+            </div>
+          </div>
+          
+          <div class="content-3" id="content-3">
+            <h1>Edit Materi</h1>
+            <form action="/ubah_materi" method="POST" enctype="multipart/form-data">
+            <%
+              if(kelas.length != 0){
+            %>
+            <input type="text" name="id_kelas" id="id_kelas" value="<%= kelas[0].id_kelas%>">
+            <% } %>
+            <%
+              if(materi.length != 0){
+              materi.forEach(function(data){
+            %>
+            
+            <div class="isi-konten3">
+              <div class="materi">
+                <input type="text" name="id_materi" value="<%= data.id_materi%>" hidden>
+                <input type="text" name="id_mapel" value="<%= data.id_pelajaran%>" hidden>
+                <h3 for="" style="margin-bottom: -15px; color: white;">Judul Materi</h3><br>
+                <input type="text" name="judul_materi" placeholder="Silahkan Masukan Judul Materi" value="<%= data.nama_materi%>"></input><br>
+                <h3 for="" style="margin-bottom: -15px; color: white;">Deskripsi Materi</h3><br>
+                <textarea rows="6" name="deskripsi_materi" placeholder="Silahkan Masukan Deskripsi Materi"><%= data.deskripsi_materi%></textarea>
+              </div>
+              <center>
+              <div class="nama-file">
+                <label style="color: white; font-size: 18px; font-weight: normal; cursor: context-menu;"> Nama File Materi : </label>
+                <input class="nama_file" id="file_materi" style="cursor: context-menu;" readonly value="<%= data.isi_materi%>">
+              </div>
+              <div class="upload-file-container">
+                <input class="fileload" type="file" id="fileload1" name="samplefile1" onchange="show_file_materi()">
+                <label class="fileload" for="fileload1">Pilih file</label>
+              </div>
+              <div class="nama-file-quiz">
+                <label style="color: white; font-size: 18px; font-weight: normal; cursor: context-menu"> Nama File Quiz : </label>
+                <input class="nama_file" style="cursor: context-menu;" id="file_quiz" readonly value="<%= data.quiz%>">
+              </div>
+              <div class="upload-quiz-container">
+                <input class="fileload" type="file" id="fileload2" name="samplefile2" onchange="show_file_quiz()">
+                <label class="fileload" for="fileload2">Pilih file</label>
+              </div>
+              </center>
+              <div class="btn-selesai-container">
+                <button class="btn_selesai" name="btn_edit_materi" type="submit" style="float: right;">Selesai</button>
+              </div>
+            </div>
+          </form>
+            <% }); %>
+            <% }; %>
+
+            <%- include('footer'); -%>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+
+  function openNav() {
+    document.getElementById("judul-content-1").style.marginLeft = "100px";
+    document.getElementById("content-3").style.marginLeft = "100px";
+    document.getElementById("judul-content-1").style.width = "91%";
+    document.getElementById("akhir-kontent-3").style.width = "150px";
+    document.getElementById("akhir-kontent-3").style.marginLeft = "66.4%";
+  }
+
+  function closeNav() {
+      document.getElementById("judul-content-1").style.marginLeft = "0";
+      document.getElementById("content-3").style.marginLeft = "0";
+      document.getElementById("judul-content-1").style.width = "100%";
+      document.getElementById("akhir-kontent-3").style.width = "0";
+      document.getElementById("akhir-kontent-3").style.marginLeft = "81%";
+  }
+
+  function show_file_materi() {
+    var file_m = document.getElementById("fileload1").value;
+    document.getElementById("file_materi").value = file_m;
+  }
+
+  function show_file_quiz() {
+    var file_q = document.getElementById("fileload2").value;
+    document.getElementById("file_quiz").value = file_q;
+  }
+</script>
+
+
+<script>
+    function adjustHeight(el){
+    el.style.height = (el.scrollHeight > el.clientHeight) ? (el.scrollHeight)+"px" : "46px";
+}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+
+
+
+
+</body>
+
+</html>

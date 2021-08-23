@@ -1,0 +1,11 @@
+<--- git --->
+git init				=> menjalankan terminal
+git add (nama file)			=> memilih file yang diinginkan
+git commit -m ("Create [nama file]")	=> merekam file yang dipilih
+git commit -m ("change []")		=> merekam file dan memberikan pesan bahwa file telah di ubah	
+git remote add origin (url github)	=> membuat sebuah remote
+git push origin master			=> mengunggah file ke dalam remote
+git pull origin master
+git status
+git diff
+git log					=> menampilkan sejarah commit

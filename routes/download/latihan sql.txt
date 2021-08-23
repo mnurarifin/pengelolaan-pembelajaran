@@ -1,0 +1,33 @@
+query sql
+///////////////////////
+<--- latihan 1 --->
+like %(nilai yg di inginkan)%; => mencari nilai di dalam where
+not name LIKE "%puding%";      => mengambil baris yang tidak memnuhi kondisi
+where price IS NULL            => mengambil data dari kolom price yang isi barisnya bernilai kosong atau berniali nol
+where price IS NOT NULL        => mengambil data dari kolom price yang isi barisnya tidak bernilai kosong atau berniali nol
+where (kolom) and/or (kolom)   => untuk mencari baris yang memenuhi 2 kondisi
+ORDER BY (kolom) asc(menaik) desc(menurun)  => mengurutkan kolom yang dicari baik itu dari a-z atau sebalknya
+LIMIT                          => menentukan jumlah max hasil yang diinginkan
+
+<--- latihan 2 --->
+Distinct		=> mengecualikan baris duplikat
+Aritmatika		=> dapat di gunakan di dalam sql (+ - * /)
+SUM(kolom yang dipilih) => menjumlahkan seluruh data
+AVG(kolom yang dipilih)	=> Menghitung Rata-Rata
+COUNT(Kolom yang dipilih) => menghitung jumlah total baris pada kolom yang diinginkan
+MAX/MIN(Kolom yang dipilih) = > mendapatkan nilai max atau min dari baris milik kolom tertentu
+GROPU BY		=> mengelompokan baris yang diinginkan
+HAVING 	COUNT		=> mencari dari tabel setelah pengelompokan
+
+-- dapatkan id dan nama pengguna yang membeli "sandal"
+
+SELECT users.id, users.name
+FROM sales_records
+JOIN users
+ON sales_records.user_id = users.id
+JOIN items
+WHERE sales_records.item_id = (
+  SELECT id
+  FROM items
+  WHERE name = "sandal")
+GROUP BY users.id;

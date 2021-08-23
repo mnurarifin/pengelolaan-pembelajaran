@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/image/Group 22.png"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  <script>
+  // if (document.location.search.match(/type=embed/gi)) {
+  //   window.parent.postMessage("resize", "*");
+  // }
+</script>
+
+
+<!-- penting -->
+
+<title>E-Learning - Profil</title>
+<link rel="stylesheet" href="/asset/stylesheet_profile.css">
+
+</head>
+
+<%- include('container_user'); -%>
+
+      <div class="contents">
+        <div class="isi-content" id="isi-content">
+          <div class="container">
+
+          <div class="judul-content-1" id="judul-content-1">
+            <!-- <h3>Dashboard</h3> -->
+            <div class="content-1" id="content-1">
+                <h2 style="text-transform: uppercase;"><%=data[0].nama_depan%></h2>
+            </div>
+          </div>
+  
+          <div class="content-3" id="content-3">
+            <form method="POST" action="/update_foto_user" enctype="multipart/form-data">
+            
+            <div class="foto-profil-form col-sm-2">
+              <div class="form-group">
+                <% if (message.length > 0) { %>
+                  <div style="position: absolute;" class="alert alert-danger col-sm-12"><%= message %></div>
+                  <% } %>
+                <img src="<%=data[0].foto%>" id="imgshow" align="left" alt="foto_profil_saya">
+                <input class="nama_file" name="ubah_gambar" style="cursor: context-menu;" id="file_quiz" readonly value="<%=data[0].foto%>" hidden>
+                <input class="imgload" type="file" id="imgload" onchange="show_file_quiz()" name="samplefile">
+                <label style="font-family: 'poppins'" class="imgload" for="imgload">Pilih file</label>
+              </div>  
+              <div class="form-group">
+              </div>
+            </div>
+            
+            <div class="menu-form col-sm-4">
+              <p><span>Pengaturan Profil</span></p>
+                <div class="form-group">
+                  <label>Nama Depan</label>
+                  <input type="text" name="nama_depan" class="form-control" value="<%=data[0].nama_depan%>" placeholder="Masukkan nama Anda">
+                </div>
+                <!-- ---!--- -->
+                <div class="form-group">
+                  <label>Nama Belakang</label>
+                  <input type="text" name="nama_belakang" class="form-control" value="<%=data[0].nama_belakang%>" placeholder="Masukkan nama Anda">
+                </div>
+                <!-- ---!--- -->
+                <div class="form-group">
+                  <label>Alamat</label>
+                  <textarea class="form-control" name="alamat" cols="3" rows="2" placeholder="Masukkan alamat Anda"><%=data[0].alamat%></textarea>
+                </div>
+                <!-- ---!--- -->
+                <div class="form-group">
+                  <label>Telepon</label>
+                  <input type="text" name="telepon" class="form-control" value="<%=data[0].telepon%>" placeholder="Masukkan nomor telepon Anda">
+                </div>
+                <!-- ---!--- -->
+            </div>
+            
+            <div class="ubah-password-form col-sm-4">
+              <p><span>Pengaturan Akun</span></p>
+              <div class="form-group">
+                <label>Alamat Email</label>
+                <input type="email" name="alamat_email" class="form-control" value="<%=data[0].email%>" placeholder="Masukkan alamat email Anda">
+              </div>
+              <!-- ---!--- -->
+              <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" name="username" class="form-control" value="<%=data[0].username%>" placeholder="Masukkan username Anda" readonly style="cursor: context-menu;">
+              </div>
+              <!-- ---!--- -->
+              <div class="form-group">
+                  <label>Password</label>
+                  <input id="showpassword" name="password" type="password" class="form-control" value="<%=data[0].password%>" placeholder="Masukkan password Anda" width="60%">
+                  <input type="checkbox" class="form-control" onclick="passFunction()" style="width: 5%;">Tampilkan Password</input>
+              </div>
+              <!-- ---!--- -->
+              <div class="form-group">
+                  <label>Konfirmasi Password</label>
+                  <input id="showpassword2" name="konfirm_pas" on type="password" class="form-control" value="<%=data[0].confim_password%>" placeholder="Masukkan ulang password Anda" width="60%">
+              </div>
+              <!-- ---!--- -->
+              <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+            
+          </form>
+            <%- include('footer'); -%>
+        
+        </div>
+        
+
+        </div>
+      </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+
+  function openNav() {
+    document.getElementById("judul-content-1").style.marginLeft = "100px";
+    document.getElementById("content-3").style.marginLeft = "100px";
+    document.getElementById("judul-content-1").style.width = "91%";
+  }
+
+  function closeNav() {
+      document.getElementById("judul-content-1").style.marginLeft = "0";
+      document.getElementById("content-3").style.marginLeft = "0";
+      document.getElementById("judul-content-1").style.width = "100%";
+  }
+
+  function passFunction() {
+      var x = document.getElementById("showpassword");
+      var y = document.getElementById("showpassword2");
+      if (x.type === "password" && y.type === "password") {
+        x.type = "text";
+        y.type = "text";
+      } else {
+        x.type = "password";
+        y.type = "password";
+      }
+  }
+  function show_file_quiz() {
+    var file_q = document.getElementById("imgload").value;
+    document.getElementById("file_quiz").value = file_q;
+  }
+
+  // change image
+
+  $('document').ready(function () {
+    $("#imgload").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imgshow').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+  });
+</script>
+
+
+
+  
+  
+
+</body>
+
+</html>

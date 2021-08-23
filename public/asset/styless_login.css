@@ -1,0 +1,14 @@
+body{
+    background: url("/image/Rectangle 27.png") no-repeat  fixed;
+    background-size:100% 135%;
+}
+
+.isi_konten{
+    position: relative;
+}
+
+.isi_konten input{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+}

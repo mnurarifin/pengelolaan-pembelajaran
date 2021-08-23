@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+        
+<script>
+if (document.location.search.match(/type=embed/gi)) {
+  window.parent.postMessage("resize", "*");
+}
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+        
+        
+<!-- penting -->
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<title>Pilih Materi</title>
+
+<link rel="stylesheet" href="/asset/styless_materi_siswa.css">
+<link rel="stylesheet" href="/asset/owl.carousel.min.css" type="text/css">
+<link rel="stylesheet" href="/asset/owl.theme.default.css" type="text/css">
+
+<!-- link data table -->   
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
+
+<!--  -->
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/Group 22.png" />
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+
+</head>
+
+<%- include('container_mentor'); -%>
+
+      <div class="contents">
+        <div class="isi-content">
+          <div class="container">
+
+          <div class="judul-content-1" id="judul-content-1">
+            <!-- <h3>Dashboard</h3> -->
+            <div class="content-1">
+              <h1>Pilih Materi </h1>
+              <h2>Yang Akan Di Kelola</h2>
+            </div>
+          </div>
+  
+          <div class="content-3" id="content-3">
+            <h1>Pilih Materi</h1>
+            <div class="button-container">
+              <form action="/home/tambah_materi_mentor" method="POST">
+                <% if(kelas.length != 0) { %>
+                  <input type="text" name="id_kelas" id="id_kelas" value="<%= kelas[0].id_kelas%>" hidden>
+                <% } %>
+                <button id="btn_tambah" type="submit" >Tambah</button>
+              
+            <%
+            if(materi.length != 0){
+            %>  
+              
+            <input type="text" name="btn_nama_materi" value="<%= materi[0].id_pelajaran%>" hidden>
+          </form>
+            </div>
+            
+            <%
+              materi.forEach(function(data){
+            %>
+            <div class="isi-konten3">
+              <input type="text" name="id_materi" value="<%= data.id_materi%>" hidden> 
+              <center><h2 style="text-transform: uppercase;"><%= data.nama_materi%></h2></center>
+              <form action="/beri_nilai_tugas" method="post">
+                <% if(kelas.length != 0) { %>
+                  <input type="text" name="id_kelas" id="id_kelas" value="<%= kelas[0].id_kelas%>" hidden>
+                <% } %>
+                <input type="text" name="id_pelajaran" id="id_pelajaran" value="<%= data.id_pelajaran %>" hidden>
+                <button type="submit" name="btn_id_materi" value="<%= data.id_materi%>" style=" float: right;">Beri Nilai</button>
+              </form>
+              <h2>Deskripsi Materi</h2>
+              <textarea rows="6" readonly><%= data.deskripsi_materi%></textarea>
+              <h2>File Materi</h2>
+              <input type="text" value="<%= data.isi_materi%>" readonly></input>
+              <h2>File Quiz</h2>
+              <input type="text" value="<%= data.quiz%>" readonly></input>
+              <div class="button-materi-container">
+                <form action="/home/kelola_materi_mentor" method="POST">
+                  <% if(kelas.length != 0) { %>
+                  <input type="text" name="id_kelas" id="id_kelas" value="<%= kelas[0].id_kelas%>" hidden>
+                  <% } %>
+                <button class="btn_edit_materi" name="btn_edit_materi" type="submit" value="<%= data.id_materi%>" style="margin-top: 10px; margin-left: 0px;">Edit</button>
+                </form>
+                <form action="/hapus_materi" method="post">
+                  <% if(kelas.length != 0) { %>
+                    <input type="text" name="id_kelas" id="id_kelas" value="<%= kelas[0].id_kelas%>" hidden>
+                  <% } %>
+                  <input type="text" name="btn_hapus_id" value="<%= data.id_pelajaran%>" hidden>
+                <button class="btn_hapus_materi" name="btn_hapus_materi" type="submit" value="<%= data.id_materi%>" style="margin-top: 10px;">Hapus</button>
+              </form>
+              </div>
+            </div>
+
+            <% }); %>
+            <% }; %>
+            
+            <%- include('footer'); -%>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+  function openNav() {
+    document.getElementById("judul-content-1").style.marginLeft = "100px";
+    document.getElementById("content-3").style.marginLeft = "100px";
+    document.getElementById("judul-content-1").style.width = "91%";
+  }
+
+  function closeNav() {
+      document.getElementById("judul-content-1").style.marginLeft = "0";
+      document.getElementById("content-3").style.marginLeft = "0";
+      document.getElementById("judul-content-1").style.width = "100%";
+  }
+</script>
+
+
+<script>
+    function adjustHeight(el){
+    el.style.height = (el.scrollHeight > el.clientHeight) ? (el.scrollHeight)+"px" : "46px";
+}
+</script>
+
+<script>
+  document.getElementById("btn_kembali").onclick = function () {
+    location.href = "/pilih_pelajaran_mentor";
+  }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+
+
+
+
+  
+  
+
+</body>
+
+</html>

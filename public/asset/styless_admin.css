@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'poppins';
+    src: url("/font/Poppins-Regular.ttf");
+  }
+  
+  .contents{
+    width: 100%;
+    height: max-content;
+    z-index: 1;
+    background-color: #E7E7E7;
+  }
+  
+  /* Awal konten 1 */
+
+  .judul-content-1{
+    position: fixed;
+    width: 84%;
+    z-index: 4;
+    margin-top: 5px;
+  }
+
+  .content-1{
+    background-color: #1F4AA8;
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    padding: 20px 40px;
+  }
+
+  .content-1 h1{
+    margin-left: 200px;
+    margin-top: 40px;
+    font-family: Poppins;
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+  }
+
+.content-1 form{
+    float: left;
+}
+
+.foto-profil-form {
+  border-radius: 10px;
+}
+
+.foto-profil-form img {
+  margin-left: 45px;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  border: 2px solid white;
+}
+
+.foto-profil-form button {
+    width: 120px;
+}
+  
+  /* Akhir Konten 1 */
+  
+    
+  /* Awal Konten 2 */
+
+  .content-2 span{
+    font-family: poppins;
+    font-weight: bold;
+    color: #1F4AA8;
+    font-size: 23px;
+  }
+
+  table{
+    background-color: white;
+    font-size: 15px;
+    font-family: poppins;
+  }
+
+  .content-2{
+      position: relative;
+      padding-top: 18%;
+  }
+
+  .cont_table2{
+      margin-top: 20px;
+  }
+
+  /* Awal Konten 2 */
+
+  /* Awal Konten 3 */
+  
+  .content-3{
+    margin-top: 50px;
+  }
+
+  .content-3 span{
+    font-family: poppins;
+    font-weight: bold;
+    color: #1F4AA8;
+    font-size: 23px;
+  }
+
+  .cont_table3{
+    margin-top: 20px;
+}
+
+  .footer {
+    margin-top: 40px;
+    border-top: 1px solid #303030;
+    padding: 15px 0;
+    margin-top: 45px;
+    font-family: poppins;
+    color: #1F4AA8;
+  }
+
+  .footer a{
+    color: #1F4AA8;
+  }
+
+  .footer a:hover{
+    text-decoration: none;
+    color: #1F4AA8;
+  }
+
+  
+
+  /* Akhir Konten 3 */
+  
+  .act-btn{
+    position: fixed;
+    display: block;
+    transition: ease all 0.3s;
+    right: 20px;
+    bottom:20px;
+  }
+
+  .act-btn button{
+      width: 70px;
+      height: 70px;
+      border-radius: 100%;
+  }
+  
+
+  
+
+  
+  /*////////        Responve         /////////*/
+  
+  
+  /* 
+    ##Device = Desktops
+    ##Screen = 1281px to higher resolution desktops
+  */
+  
+  @media (min-width: 1281px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    /* CSS */
+    
+  }
